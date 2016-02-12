@@ -6,5 +6,5 @@ Cordova plugin for buddybuild
     ionic plugin add https://github.com/clarencenhuang/cordova-buddybuild
 
 ##Usage 
-
-    BuddyBuildPlugin.setup()
+    if(window.BuddyBuildPlugin)
+        BuddyBuildPlugin.setup()

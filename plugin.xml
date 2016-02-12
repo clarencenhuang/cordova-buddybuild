@@ -7,10 +7,17 @@
     <description>Add BuddyBuild integration to your Cordova Application</description>
     <license>Apache 2.0</license>
     <keywords>intuit, buddybuild</keywords>
-
+    
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    
+    <js-module src="www/buddybuild.js" name="BuddyBuildPlugin">
+        <clobbers target="window.BuddyBuildPlugin" />
+    </js-module>
+    
     <!-- ios -->
     <platform name="ios">
-      <asset src="www/buddybuild.js" target="buddybuild.js" />
 
       <header-file src="src/ios/BuddyBuildPlugin.h" />
       <source-file src="src/ios/BuddyBuildPlugin.m" />

@@ -8,9 +8,8 @@
 
     NSString* callbackId = [command callbackId];
     [BuddyBuildSDK setup];
-    NSString* msg = @"ok"
-    CDVPluginResult* result = [[CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    [self success:result callbackId:callbackId];
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:result callbackId:callbackId];
 }
 
 @end

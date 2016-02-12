@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.intuit.buddybuild"
+        version="0.1.0">
+
+    <name>BuddyBuild</name>
+    <description>Add BuddyBuild integration to your Cordova Application</description>
+    <license>Apache 2.0</license>
+    <keywords>intuit, buddybuild</keywords>
+
+    <!-- ios -->
+    <platform name="ios">
+      <asset src="www/buddybuild.js" target="buddybuild.js" />
+
+      <header-file src="src/ios/BuddyBuildPlugin.h" />
+      <source-file src="src/ios/BuddyBuildPlugin.m" />
+
+      <framework src="src/ios/BuddyBuildSDK.framework" custom="true" />
+      
+      <!-- BuddyBuild SDK dependencies -->
+      <framework src="AssetsLibrary.framework" />
+      <framework src="CoreTelephony.framework" />
+      <framework src="CoreText.framework" />
+      <framework src="QuartzCore.framework" />
+      <framework src="SystemConfiguration.framework" />
+      
+      <!-- Adopts project's config.xml to include the buddybuild plugin and domain whitelists -->
+      <config-file target="config.xml" parent="/*/plugins">
+          <feature name="BuddyBuildPlugin">
+              <param name="ios-package" value="BuddyBuildPlugin"/>
+          </feature>
+      </config-file>
+      
+      <config-file target="config.xml" parent="/*">
+        <access origin="*" />
+      </config-file>
+    </platform>
+</plugin>
